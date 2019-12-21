@@ -1,0 +1,9 @@
+sudo: required
+services:
+  - docker
+before_install:
+  - docker build -t sumannakkala/docker-react -f Dockerfile.dev .
+
+scripts:
+  - docker run sumannakkala/docker-react npm run test -- --coverage
+ 
